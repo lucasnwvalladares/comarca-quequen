@@ -2,42 +2,58 @@
   <div>
     <main class="container mx-auto py-12 px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-serif font-bold mb-12 text-stone-800 text-center italic">Historias y Leyendas</h2>
+        <h2 class="text-4xl md:text-6xl font-serif font-bold mb-16 text-stone-800 text-center italic border-b-2 border-stone-200 pb-8">Historias y Leyendas</h2>
 
-        <section class="bg-stone-100 p-8 md:p-16 rounded-3xl shadow-sm border border-stone-200">
-          <h3 class="text-3xl font-serif font-bold mb-8 text-stone-700 underline decoration-stone-400 decoration-4">El Tigre del Quequén</h3>
+        <section class="bg-white p-8 md:p-20 rounded-[3rem] shadow-xl border border-stone-100 relative overflow-hidden">
+          <!-- Decorative element -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-stone-100 rounded-bl-full -mr-16 -mt-16 opacity-50"></div>
+          
+          <h3 class="text-4xl font-serif font-bold mb-10 text-stone-800 underline decoration-stone-300 decoration-8 underline-offset-8">El Tigre del Quequén</h3>
           
           <div class="prose prose-stone lg:prose-xl max-w-none">
-            <p class="text-lg mb-6 leading-relaxed">
-              La leyenda más famosa de la região gira em torno de **Felipe Pascual Pacheco**, um gaúcho apelidado de "El Tigre del Quequén". Nascido em 1828, Pacheco se tornou um dos "matreros" mais conhecidos do sul bonaerense.
+            <p class="text-xl mb-8 leading-relaxed text-stone-600 italic">
+              La leyenda más famosa de la región gira en torno a <strong>Felipe Pascual Pacheco</strong>, un gaucho apodado "El Tigre del Quequén". 
             </p>
 
-            <blockquote class="border-l-4 border-stone-800 pl-6 italic my-8 text-stone-600">
-              "Para a justiça, um criminoso fugitivo. Para o povo, um Robin Hood das Pampas."
-            </blockquote>
-
-            <p class="mb-6">
-              Pacheco utilizava as cavernas naturais esculpidas pelo rio Quequén Salado como seu refúgio estratégico. Conhecedor profundo da geografia local, ele conseguia evadir a justiça por anos, movendo-se silenciosamente pelas barrancas e pastagens.
-            </p>
-
-            <h4 class="text-2xl font-bold mb-4 text-stone-700">A Cueva del Tigre</h4>
-            <p class="mb-6">
-              A cueva (caverna) que hoje leva seu nome era seu esconderijo principal. Diz a lenda que ele era imbatível no duelo criollo e possuía uma astúcia animal para desaparecer em meio à natureza quando perseguido. Sua captura definitiva ocorreu em 1875, após anos de busca pelo comissário Luis Aldaz.
-            </p>
-
-            <div class="bg-stone-200 aspect-video rounded-xl flex items-center justify-center text-stone-500 italic mb-8 shadow-inner">
-              [Ilustración o Foto de la Cueva]
+            <div class="bg-stone-50 border-l-8 border-stone-800 p-8 my-12 shadow-inner rounded-r-2xl">
+              <p class="text-2xl font-serif italic text-stone-700 leading-snug">
+                "Para la justicia, un criminal fugitivo. Para el pueblo, un Robin Hood de las Pampas."
+              </p>
             </div>
 
-            <p>
-              Hoje, a Cueva del Tigre não é apenas um monumento geológico, mas um portal para imaginar a vida épica e solitária dos gaúchos que desafiaram a autoridade na imensidão da pampa do século XIX.
+            <p class="mb-8 text-stone-700">
+              Nacido en 1828, Pacheco se convirtió en uno de los "matreros" más conocidos del sur bonaerense. Su historia es una mezcla de crónicas policiales de la época y el mito popular que lo recuerda como un hombre que desafiaba a la autoridad.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12 my-16 items-center">
+              <div>
+                <h4 class="text-2xl font-bold mb-4 text-stone-800">El Refugio en las Barrancas</h4>
+                <p class="text-stone-700 mb-6">
+                  Pacheco utilizaba las cavernas naturales esculpidas por el río Quequén Salado como su refugio estratégico. Conocedor profundo de la geografía local, lograba evadir a la justicia por años, moviéndose silenciosamente entre las barrancas y los pajonales.
+                </p>
+              </div>
+              <div class="bg-stone-200 aspect-[4/5] rounded-3xl flex flex-col items-center justify-center text-stone-400 p-10 text-center border-2 border-dashed border-stone-300 group hover:border-stone-400 transition-colors">
+                <span class="text-5xl mb-4 opacity-30 group-hover:scale-110 transition-transform duration-500">📷</span>
+                <p class="font-serif italic">Próximamente:<br/>Foto de la Cueva del Tigre</p>
+              </div>
+            </div>
+
+            <h4 class="text-2xl font-bold mb-4 text-stone-800">La Captura</h4>
+            <p class="mb-8 text-stone-700 leading-relaxed">
+              Dicho refugio, que hoy lleva su nombre, era su escondite principal. Cuenta la leyenda que era imbatible en el duelo criollo y poseía una astucia casi animal para desaparecer en la naturaleza cuando era perseguido. Su captura definitiva ocurrió en 1875, tras una larga búsqueda liderada por el comisario Luis Aldaz, conocido como "Gorra Colorada".
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Hoy, la <strong>Cueva del Tigre</strong> no es solo un monumento geológico a orillas del río, sino un portal para imaginar la vida épica y solitaria de los gauchos que marcaron la identidad de la pampa en el siglo XIX.
             </p>
           </div>
         </section>
 
-        <div class="mt-12 text-center">
-          <NuxtLink to="/nature" class="inline-flex items-center gap-2 text-stone-600 hover:text-stone-800 font-medium">
-            <span>←</span> Volver a Naturaleza
+        <!-- Call to Action -->
+        <div class="mt-20 flex flex-col items-center">
+          <p class="text-stone-400 uppercase tracking-widest text-sm mb-6">¿Quieres ver dónde vivía el Tigre?</p>
+          <NuxtLink to="/nature" class="bg-stone-800 text-white px-12 py-5 rounded-full font-bold hover:bg-stone-700 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-4">
+            <span>←</span> Volver a ver el Río y las Barrancas
           </NuxtLink>
         </div>
       </div>
@@ -49,7 +65,7 @@
 useHead({
   title: 'Leyendas - Comarca del Quequén Salado',
   meta: [
-    { name: 'description', content: 'Descubre la fascinante historia del Tigre del Quequén y las leyendas de la región.' }
+    { name: 'description', content: 'Descubre la fascinante historia del Tigre del Quequén y las leyendas que habitan en las cuevas del río.' }
   ]
 })
 </script>
