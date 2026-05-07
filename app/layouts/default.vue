@@ -3,11 +3,11 @@
     <header class="bg-stone-800 text-white p-6 shadow-lg">
       <div class="container mx-auto flex justify-between items-center">
         <NuxtLink to="/" class="text-2xl font-serif font-bold italic">Comarca del Quequén Salado</NuxtLink>
-        <nav class="hidden md:flex space-x-6">
-          <NuxtLink to="/" class="hover:text-stone-300">Inicio</NuxtLink>
-          <NuxtLink to="/cascallares" class="hover:text-stone-300">Cascallares</NuxtLink>
-          <a href="#" class="hover:text-stone-300">Naturaleza</a>
-          <a href="#" class="hover:text-stone-300">Lendas</a>
+        <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-widest font-semibold">
+          <NuxtLink to="/" class="hover:text-stone-300 transition-colors">Inicio</NuxtLink>
+          <NuxtLink to="/cascallares" class="hover:text-stone-300 transition-colors text-stone-100 border-b-2 border-transparent hover:border-stone-400">Cascallares</NuxtLink>
+          <NuxtLink to="/nature" class="hover:text-stone-300 transition-colors text-stone-100 border-b-2 border-transparent hover:border-stone-400">Naturaleza</NuxtLink>
+          <NuxtLink to="/legends" class="hover:text-stone-300 transition-colors text-stone-100 border-b-2 border-transparent hover:border-stone-400">Leyendas</NuxtLink>
         </nav>
       </div>
     </header>
