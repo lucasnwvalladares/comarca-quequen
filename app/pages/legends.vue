@@ -5,10 +5,14 @@
         <h2 class="text-4xl md:text-6xl font-serif font-bold mb-16 text-stone-800 text-center italic border-b-2 border-stone-200 pb-8">Historias y Leyendas</h2>
 
         <section class="bg-white p-8 md:p-20 rounded-[3rem] shadow-xl border border-stone-100 relative overflow-hidden">
-          <!-- Decorative element -->
           <div class="absolute top-0 right-0 w-32 h-32 bg-stone-100 rounded-bl-full -mr-16 -mt-16 opacity-50"></div>
           
-          <h3 class="text-4xl font-serif font-bold mb-10 text-stone-800 underline decoration-stone-300 decoration-8 underline-offset-8">El Tigre del Quequén</h3>
+          <div class="flex justify-between items-start mb-10 flex-wrap gap-4">
+            <h3 class="text-4xl font-serif font-bold text-stone-800 underline decoration-stone-300 decoration-8 underline-offset-8">El Tigre del Quequén</h3>
+            <a href="https://maps.app.goo.gl/TdTvaUGAnTQwP9FHA" target="_blank" class="bg-stone-800 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-stone-700 transition-all flex items-center gap-2">
+              📍 Ver Cueva en el Mapa
+            </a>
+          </div>
           
           <div class="prose prose-stone lg:prose-xl max-w-none">
             <p class="text-xl mb-8 leading-relaxed text-stone-600 italic">
@@ -31,29 +35,27 @@
                 <p class="text-stone-700 mb-6">
                   Pacheco utilizaba las cavernas naturales esculpidas por el río Quequén Salado como su refugio estratégico. Conocedor profundo de la geografía local, lograba evadir a la justicia por años, moviéndose silenciosamente entre las barrancas y los pajonales.
                 </p>
+                <p class="text-sm text-stone-500 italic">
+                  La cueva se encuentra en una zona agreste de gran belleza, ideal para quienes buscan conectar con la historia viva de la pampa.
+                </p>
               </div>
               <div class="bg-stone-200 aspect-[4/5] rounded-3xl flex flex-col items-center justify-center text-stone-400 p-10 text-center border-2 border-dashed border-stone-300 group hover:border-stone-400 transition-colors">
                 <span class="text-5xl mb-4 opacity-30 group-hover:scale-110 transition-transform duration-500">📷</span>
-                <p class="font-serif italic">Próximamente:<br/>Foto de la Cueva del Tigre</p>
+                <p class="font-serif italic text-stone-500">Próximamente:<br/>Foto de la Cueva del Tigre</p>
               </div>
             </div>
 
             <h4 class="text-2xl font-bold mb-4 text-stone-800">La Captura</h4>
             <p class="mb-8 text-stone-700 leading-relaxed">
-              Dicho refugio, que hoy lleva su nombre, era su escondite principal. Cuenta la leyenda que era imbatible en el duelo criollo y poseía una astucia casi animal para desaparecer en la naturaleza cuando era perseguido. Su captura definitiva ocurrió en 1875, tras una larga búsqueda liderada por el comisario Luis Aldaz, conocido como "Gorra Colorada".
-            </p>
-
-            <p class="text-stone-700 leading-relaxed">
-              Hoy, la <strong>Cueva del Tigre</strong> no es solo un monumento geológico a orillas del río, sino un portal para imaginar la vida épica y solitaria de los gauchos que marcaron la identidad de la pampa en el siglo XIX.
+              Dicho refugio, que hoy lleva su nombre, era su escondite principal. Cuenta la leyenda que era imbatible en el duelo criollo y poseía una astucia casi animal para desaparecer en la naturaleza cuando era perseguido. Su captura definitiva ocurrió en 1875, tras una larga búsqueda liderada por el comisario Luis Aldaz.
             </p>
           </div>
         </section>
 
-        <!-- Call to Action -->
         <div class="mt-20 flex flex-col items-center">
-          <p class="text-stone-400 uppercase tracking-widest text-sm mb-6">¿Quieres ver dónde vivía el Tigre?</p>
+          <p class="text-stone-400 uppercase tracking-widest text-sm mb-6">¿Quieres ver el entorno natural?</p>
           <NuxtLink to="/nature" class="bg-stone-800 text-white px-12 py-5 rounded-full font-bold hover:bg-stone-700 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-4">
-            <span>←</span> Volver a ver el Río y las Barrancas
+            <span>←</span> Volver a Naturaleza
           </NuxtLink>
         </div>
       </div>
