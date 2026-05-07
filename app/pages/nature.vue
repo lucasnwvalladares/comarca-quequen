@@ -24,24 +24,31 @@
       </section>
 
       <!-- Rio Quequén Salado -->
-      <section class="mb-20 bg-stone-800 text-white p-12 rounded-2xl shadow-xl">
-        <div class="max-w-4xl mx-auto text-center">
-          <h3 class="text-3xl font-serif font-bold mb-8 italic">El Río Quequén Salado</h3>
-          <p class="text-xl leading-relaxed mb-8 opacity-90">
-            Este curso de agua es el límite natural entre los partidos de Coronel Dorrego y Tres Arroyos. Sus barrancas de piedra y sus saltos naturales lo convierten en un destino único para el ecoturismo aventura.
-          </p>
-          <div class="grid md:grid-cols-3 gap-6 text-stone-300">
-            <div class="p-4 border border-stone-600 rounded-lg">
-              <span class="text-2xl block mb-2">🛶</span>
-              Kayak y Canotaje
-            </div>
-            <div class="p-4 border border-stone-600 rounded-lg">
-              <span class="text-2xl block mb-2">🥾</span>
-              Trekking por Barrancas
-            </div>
-            <div class="p-4 border border-stone-600 rounded-lg">
-              <span class="text-2xl block mb-2">🎣</span>
-              Pesca Deportiva
+      <section class="mb-20 overflow-hidden rounded-3xl shadow-2xl">
+        <div class="relative h-[400px]">
+          <img src="/images/rio-quequen.jpg" alt="El Río Quequén Salado" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-stone-900/40 flex items-center justify-center">
+            <h3 class="text-5xl font-serif font-bold text-white italic drop-shadow-lg">El Río Quequén Salado</h3>
+          </div>
+        </div>
+        <div class="bg-stone-800 text-white p-12">
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-xl leading-relaxed mb-8 opacity-90">
+              Este curso de água é o limite natural entre os partidos de Coronel Dorrego e Tres Arroyos. Suas barrancas de pedra e seus saltos naturais o convertem em um destino único para o ecoturismo aventura.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 text-stone-300">
+              <div class="p-6 border border-stone-600 rounded-xl hover:bg-stone-700 transition-colors">
+                <span class="text-3xl block mb-3">🛶</span>
+                <span class="font-bold">Kayak y Canotaje</span>
+              </div>
+              <div class="p-6 border border-stone-600 rounded-xl hover:bg-stone-700 transition-colors">
+                <span class="text-3xl block mb-3">🥾</span>
+                <span class="font-bold">Trekking por Barrancas</span>
+              </div>
+              <div class="p-6 border border-stone-600 rounded-xl hover:bg-stone-700 transition-colors">
+                <span class="text-3xl block mb-3">🎣</span>
+                <span class="font-bold">Pesca Deportiva</span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,32 +1,33 @@
 <template>
   <div>
     <main>
-      <section class="relative h-[60vh] flex items-center justify-center bg-stone-400 overflow-hidden">
-        <div class="absolute inset-0 bg-black/40 z-10"></div>
+      <section class="relative h-[70vh] flex items-center justify-center bg-stone-800 overflow-hidden">
+        <img src="/images/rio-quequen.jpg" alt="Río Quequén Salado" class="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent z-10"></div>
         <div class="z-20 text-center text-white px-4">
-          <h2 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">Descubre la Belleza del Quequén Salado</h2>
-          <p class="text-xl md:text-2xl max-w-2xl mx-auto drop-shadow-md">Ecoturismo, aventura y paz en el corazón de la provincia de Buenos Aires.</p>
+          <h2 class="text-5xl md:text-7xl font-serif font-bold mb-6 drop-shadow-2xl">Descubre la Belleza del Quequén Salado</h2>
+          <p class="text-xl md:text-3xl max-w-3xl mx-auto drop-shadow-lg font-light">Ecoturismo, aventura y paz en el coração de la provincia de Buenos Aires.</p>
         </div>
       </section>
 
-      <section class="container mx-auto py-16 px-6 grid md:grid-cols-2 gap-12 items-center">
+      <section class="container mx-auto py-20 px-6 grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <h3 class="text-3xl font-serif font-bold mb-6 text-stone-800">Bienvenidos a la Comarca</h3>
-          <p class="mb-4 leading-relaxed text-lg text-stone-700">
+          <h3 class="text-4xl font-serif font-bold mb-8 text-stone-800">Bienvenidos a la Comarca</h3>
+          <p class="mb-6 leading-relaxed text-xl text-stone-700">
             La Comarca del Quequén Salado es una joya emergente del sudoeste bonaerense. El río Quequén Salado, con sus barrancas y cascadas, es el protagonista de paisajes que desafían la monotonía de la llanura.
           </p>
-          <p class="mb-6 leading-relaxed text-lg text-stone-700">
-            Desde la histórica Micaela Cascallares hasta la desembocadura en el mar, cada rincón guarda una historia y una aventura esperando ser descubierta.
+          <p class="mb-10 leading-relaxed text-xl text-stone-700">
+            Desde la histórica Micaela Cascallares hasta la desembocadura en el mar, cada rincón guarda una historia e uma aventura esperando ser descoberta.
           </p>
-          <NuxtLink to="/cascallares" class="inline-block bg-stone-800 text-white px-8 py-3 rounded-md hover:bg-stone-700 transition-colors shadow-md">
+          <NuxtLink to="/nature" class="inline-block bg-stone-800 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-stone-700 transition-all shadow-xl hover:-translate-y-1">
             Explorar Atractivos
           </NuxtLink>
         </div>
-        <div class="bg-stone-200 h-80 rounded-lg shadow-inner flex items-center justify-center text-stone-500 italic">
-          [Imagen del Río Quequén Salado]
+        <div class="relative group">
+          <div class="absolute -inset-4 bg-stone-200 rounded-2xl transform rotate-2 group-hover:rotate-1 transition-transform"></div>
+          <img src="/images/rio-quequen.jpg" alt="Vista del Río Quequén Salado" class="relative rounded-xl shadow-2xl w-full h-[450px] object-cover" />
         </div>
       </section>
-
       <section class="bg-stone-100 py-16">
         <div class="container mx-auto px-6">
           <h3 class="text-3xl font-serif font-bold mb-12 text-center text-stone-800">Destaques Regionales</h3>
