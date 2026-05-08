@@ -1,15 +1,19 @@
 <template>
   <div class="min-h-screen bg-stone-50 font-sans text-stone-900 flex flex-col">
-    <header class="bg-stone-800 text-white p-4 md:p-6 shadow-lg sticky top-0 z-50">
+    <header class="bg-stone-800 text-white p-4 md:p-6 shadow-lg sticky top-0 z-50 border-b border-stone-700">
       <div class="container mx-auto flex justify-between items-center">
-        <NuxtLink to="/" class="text-xl md:text-2xl font-serif font-bold italic" @click="isMenuOpen = false">
-          Comarca del Quequén Salado
+        <NuxtLink to="/" class="flex items-center gap-4 group" @click="isMenuOpen = false">
+          <img src="/images/logo-comarca.png" alt="Logo Comarca Río Quequén Salado" class="h-12 md:h-16 w-auto bg-white rounded-lg p-1 transition-transform group-hover:scale-105" />
+          <div class="hidden sm:block">
+            <h1 class="text-xl md:text-2xl font-serif font-bold italic leading-tight">Comarca del Quequén Salado</h1>
+            <p class="text-[10px] uppercase tracking-[0.2em] opacity-60">Turismo Público Sustentable</p>
+          </div>
         </NuxtLink>
         
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6 text-sm uppercase tracking-widest font-semibold">
+        <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
           <NuxtLink to="/" class="hover:text-stone-300 transition-colors">Inicio</NuxtLink>
-          <NuxtLink to="/cascallares" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Cascallares</NuxtLink>
+          <NuxtLink to="/towns" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Pueblos</NuxtLink>
           <NuxtLink to="/nature" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Naturaleza</NuxtLink>
           <NuxtLink to="/legends" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Leyendas</NuxtLink>
         </nav>
@@ -55,11 +59,11 @@
             Inicio
           </NuxtLink>
           <NuxtLink 
-            to="/cascallares" 
+            to="/towns" 
             class="text-xl font-serif italic border-b border-stone-700 pb-2" 
             @click="isMenuOpen = false"
           >
-            Cascallares
+            Pueblos
           </NuxtLink>
           <NuxtLink 
             to="/nature" 
