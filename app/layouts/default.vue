@@ -5,17 +5,17 @@
         <NuxtLink to="/" class="flex items-center gap-4 group" @click="isMenuOpen = false">
           <img src="/images/logo-comarca.png" alt="Logo Comarca Río Quequén Salado" class="h-12 md:h-16 w-auto bg-white rounded-lg p-1 transition-transform group-hover:scale-105" />
           <div class="hidden sm:block">
-            <h1 class="text-xl md:text-2xl font-serif font-bold italic leading-tight">Comarca del Quequén Salado</h1>
-            <p class="text-[10px] uppercase tracking-[0.2em] opacity-60">Turismo Público Sustentable</p>
+            <h1 class="text-xl md:text-2xl font-serif font-bold italic leading-tight">Comarca Río Quequén Salado</h1>
+            <p class="text-[10px] uppercase tracking-[0.2em] opacity-60">Ecoturismo Público Sustentable</p>
           </div>
         </NuxtLink>
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
           <NuxtLink to="/" class="hover:text-stone-300 transition-colors">Inicio</NuxtLink>
-          <NuxtLink to="/towns" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Pueblos</NuxtLink>
-          <NuxtLink to="/nature" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Naturaleza</NuxtLink>
-          <NuxtLink to="/legends" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Leyendas</NuxtLink>
+          <NuxtLink to="/pueblos" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Pueblos</NuxtLink>
+          <NuxtLink to="/atracciones" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Atracciones</NuxtLink>
+          <NuxtLink to="/leyendas" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Leyendas</NuxtLink>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -59,21 +59,21 @@
             Inicio
           </NuxtLink>
           <NuxtLink 
-            to="/towns" 
+            to="/pueblos" 
             class="text-xl font-serif italic border-b border-stone-700 pb-2" 
             @click="isMenuOpen = false"
           >
             Pueblos
           </NuxtLink>
           <NuxtLink 
-            to="/nature" 
+            to="/atracciones" 
             class="text-xl font-serif italic border-b border-stone-700 pb-2" 
             @click="isMenuOpen = false"
           >
-            Naturaleza
+            Atracciones
           </NuxtLink>
           <NuxtLink 
-            to="/legends" 
+            to="/leyendas" 
             class="text-xl font-serif italic border-b border-stone-700 pb-2" 
             @click="isMenuOpen = false"
           >
@@ -89,8 +89,8 @@
 
     <footer class="bg-stone-900 text-stone-400 py-12 px-6">
       <div class="container mx-auto text-center">
-        <p class="mb-4 font-serif italic text-white/80">&copy; 2026 Comarca del Quequén Salado</p>
-        <p class="text-sm tracking-widest uppercase opacity-50">Turismo Público y Sostenible</p>
+        <p class="mb-4 font-serif italic text-white/80">&copy; 2026 Comarca Río Quequén Salado</p>
+        <p class="text-sm tracking-widest uppercase opacity-50">Ecoturismo Público y Sostenible</p>
         <div class="mt-8 border-t border-stone-800 pt-8">
           <p class="text-xs italic text-stone-600 max-w-md mx-auto leading-relaxed">
             Preservando el patrimonio natural y cultural del sudoeste bonaerense para las futuras generaciones.
