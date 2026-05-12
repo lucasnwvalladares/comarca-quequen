@@ -71,11 +71,23 @@
           >
             <NuxtLink :to="`/atracciones/${item.slug}`" class="group relative block h-56 w-full overflow-hidden text-left">
               <img
+                v-if="item.image"
                 :src="resolveAssetPath(item.image)"
                 :alt="item.imageAlt || item.name"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/10 to-transparent"></div>
+              <div v-else class="absolute inset-0 flex items-center justify-center bg-stone-100 text-center">
+                <div class="mx-6 rounded-lg border border-dashed border-stone-300 bg-white/70 px-5 py-4 text-stone-500">
+                  <p class="text-[11px] font-bold uppercase tracking-widest">Imagen pendiente</p>
+                  <p class="mt-2 text-xs leading-5">Falta sumar una foto específica de este punto.</p>
+                </div>
+              </div>
+              <div
+                :class="[
+                  'absolute inset-0 bg-gradient-to-t to-transparent',
+                  item.image ? 'from-stone-950/75 via-stone-950/10' : 'from-stone-950/20 via-transparent'
+                ]"
+              ></div>
               <span
                 :class="[
                   'absolute left-5 top-5 inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-sm font-black text-stone-950 shadow-lg',
@@ -214,6 +226,12 @@
           Muchos puntos están sobre caminos rurales, riberas o campos privados. Las ubicaciones abren búsquedas orientativas en
           Google Maps; para visitar cascadas, cuevas o pasos del río, confirmá permisos, clima, estado de caminos y operadores locales.
         </p>
+        <NuxtLink
+          to="/actividades"
+          class="mt-5 inline-flex rounded-full bg-stone-800 px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-stone-700"
+        >
+          Ver actividades recomendadas
+        </NuxtLink>
       </section>
 
       <section class="mt-16 border-t border-stone-200 pt-8">
@@ -298,9 +316,21 @@ const mapOverview = {
 
 const sharedImages = {
   waterfall: '/images/cascada-cifuentes.jpg',
+  cascadaMajidic: '/images/cascada-majidic-1.jpeg',
+  cascadaLaEscondida: '/images/cascada-la-escondida.png',
+  cascadaMulpunleufu: '/images/cascada-mulpunleufu-1.jpeg',
+  cascadaCuevaTigre: '/images/cueva-del-tigre-1-cropped.jpeg',
+  laBoca: '/images/la-boca.jpeg',
+  desembocadura: '/images/desembocadura.jpeg',
   river: '/images/rio-quequen.jpg',
   natureMap: '/images/map-nature.png',
   bridge: '/images/puente-viejo.jpg',
+  puenteVanoli: '/images/puente-vanoli.jpeg',
+  puenteCascallares: '/images/puente-cascallares.jpeg',
+  molinoRosas: '/images/molino-delasrosas-3.png',
+  puenteRn3: '/images/puente-rn3.jpeg',
+  puenteNuevo: '/images/puente-nuevo.jpeg',
+  puenteViejoAereo: '/images/puente-viejo-vista-aerea.jpeg',
   ruins: '/images/ruinas-usina.jpg',
   regionalMap: '/images/map-regional.png',
   quequenMap: '/images/map-quequen.jpg'
@@ -313,8 +343,8 @@ const naturalAttractions = [
     name: 'Desembocadura A. Pillahuinco',
     slug: 'desembocadura-pillahuinco',
     area: 'Cuenca alta',
-    image: sharedImages.river,
-    imageAlt: 'Paisaje fluvial del Quequén Salado',
+    image: sharedImages.desembocadura,
+    imageAlt: 'Paisaje de agua y pastizales en el sistema del arroyo Pillahuinco',
     description: 'Referencia del tramo alto del circuito natural, donde el sistema de arroyos ayuda a leer la cuenca antes de que el Quequén Salado gane volumen y barrancas.',
     experience: 'Lectura de cuenca, observación del paisaje rural y orientación del recorrido.',
     access: 'Referencia cartográfica; confirmar caminos rurales y permisos.',
@@ -326,8 +356,8 @@ const naturalAttractions = [
     name: 'Cascada Majidic',
     slug: 'cascada-majidic',
     area: 'Circuito de cascadas',
-    image: sharedImages.waterfall,
-    imageAlt: 'Salto de agua en el Río Quequén Salado',
+    image: sharedImages.cascadaMajidic,
+    imageAlt: 'Cascada Majidic en el Río Quequén Salado',
     description: 'Salto indicado en el mapa natural dentro del corredor de cascadas. Es parte de los puntos que vuelven singular al Quequén Salado frente a la llanura pampeana.',
     experience: 'Fotografía, caminata corta y contemplación del salto cuando el caudal acompaña.',
     access: 'Consultar acceso local, estado de caminos y autorización previa.',
@@ -340,8 +370,8 @@ const naturalAttractions = [
     name: 'Cascada Reta',
     slug: 'cascada-reta',
     area: 'Tramo inferior',
-    image: sharedImages.natureMap,
-    imageAlt: 'Mapa de atracciones naturales del Quequén Salado',
+    image: '',
+    imageAlt: 'Imagen pendiente de la Cascada Reta',
     description: 'Punto del mapa asociado al corredor hacia Reta y al tramo inferior del río. Es útil para planificar una lectura completa entre cascadas, pueblos y costa.',
     experience: 'Orientación de circuito, paisaje ribereño y recorridos con guía.',
     access: 'Usar como referencia de mapa; validar llegada exacta con prestadores.',
@@ -353,7 +383,7 @@ const naturalAttractions = [
     name: 'Cascada La Escondida',
     slug: 'cascada-la-escondida',
     area: 'Cercanías de Irene',
-    image: sharedImages.waterfall,
+    image: sharedImages.cascadaLaEscondida,
     imageAlt: 'Cascada escalonada del Quequén Salado',
     description: 'Salto cercano a la localidad de Irene. La guía turística de Coronel Dorrego la describe como una cascada escalonada de aproximadamente cuatro metros de altura.',
     experience: 'Barrancas, salto escalonado y fotografía de naturaleza.',
@@ -369,8 +399,8 @@ const naturalAttractions = [
     area: 'RN3 km 532',
     image: sharedImages.waterfall,
     imageAlt: 'Cascada Cifuentes',
-    description: 'También conocida como Cascada de Aldaya, es uno de los accidentes geográficos más imponentes del río y alcanza el salto de agua más alto de la provincia de Buenos Aires.',
-    experience: 'El gran icono natural: agua, barrancas, escala y fotografía.',
+    description: 'Sector clave del tramo Cifuentes-Aldaya, donde el río reúne cascadas, barrancas y un desnivel topográfico notable para leer el paisaje como sistema.',
+    experience: 'Agua, barrancas, lectura del desnivel del tramo y fotografía.',
     access: 'Ruta Nacional 3 km 532, camino rural y descenso caminando, según turismo municipal.',
     mapUrl: 'https://www.google.com.ar/maps/place/Cascada+Cifuentes/@-38.6271732,-60.607096,820m/data=!3m2!1e3!4b1!4m5!3m4!1s0x95928042751ec1e1:0x4bff4e74ee1333eb!8m2!3d-38.6271732!4d-60.6054509',
     mapQuery: 'Cascada Cifuentes Río Quequén Salado Coronel Dorrego Buenos Aires Argentina'
@@ -381,8 +411,8 @@ const naturalAttractions = [
     name: 'Cascada Mulpunleufú',
     slug: 'cascada-mulpunleufu',
     area: 'Corredor de Oriente',
-    image: sharedImages.waterfall,
-    imageAlt: 'Cascada sobre el Río Quequén Salado',
+    image: sharedImages.cascadaMulpunleufu,
+    imageAlt: 'Cascada Mulpunleufú sobre el Río Quequén Salado',
     description: 'Su nombre indígena también se asocia al río. La referencia turística señala una altura cercana a tres metros y un ancho aproximado de 160 metros.',
     experience: 'Panorámica amplia del río, sonido de agua y lectura geológica.',
     access: 'Recomendable con operador local por caminos rurales y sectores ribereños.',
@@ -394,8 +424,8 @@ const naturalAttractions = [
     name: 'Cascada “V”',
     slug: 'cascada-v',
     area: 'Tramo de cascadas',
-    image: sharedImages.natureMap,
-    imageAlt: 'Detalle del mapa natural de la comarca',
+    image: '',
+    imageAlt: 'Imagen pendiente de la Cascada V',
     description: 'Referencia cartográfica dentro del tramo de saltos. Su valor está en completar el circuito de cascadas y mostrar la variedad de formas del cauce.',
     experience: 'Punto de interpretación del mapa, ideal para recorridos guiados.',
     access: 'No salir sin información local actualizada sobre ingreso y seguridad.',
@@ -407,8 +437,8 @@ const naturalAttractions = [
     name: 'Cascada C. del Tigre',
     slug: 'cascada-cueva-del-tigre',
     area: 'Entorno de Cueva del Tigre',
-    image: sharedImages.river,
-    imageAlt: 'Barrancas del Río Quequén Salado',
+    image: sharedImages.cascadaCuevaTigre,
+    imageAlt: 'Entorno de la Cueva del Tigre',
     description: 'Sector próximo al paraje de la Cueva del Tigre, donde el paisaje natural se mezcla con cuevas, pasos antiguos y relatos populares del río.',
     experience: 'Agua, barrancas, leyenda y caminata interpretativa.',
     access: 'Aproximadamente en el entorno de Oriente-Marisol; confirmar desvíos y permisos.',
@@ -421,8 +451,8 @@ const naturalAttractions = [
     name: 'La Boca',
     slug: 'la-boca',
     area: 'Balneario Marisol',
-    image: sharedImages.river,
-    imageAlt: 'Río Quequén Salado cerca de su desembocadura',
+    image: sharedImages.laBoca,
+    imageAlt: 'La Boca del Río Quequén Salado',
     description: 'Lugar donde el Río Quequén Salado vierte sus aguas en el Mar Argentino. Es un punto clave para entender el encuentro entre río, dunas, playa y estuario.',
     experience: 'Atardeceres, fotografía, observación del estuario y caminatas costeras.',
     access: 'Desde Balneario Marisol; revisar clima, marea y condiciones del camino.',
@@ -438,10 +468,10 @@ const historicalAttractions = [
     name: 'Puente Ruta 85',
     slug: 'puente-ruta-85',
     area: 'Acceso norte',
-    image: sharedImages.regionalMap,
-    imageAlt: 'Mapa regional del Quequén Salado',
-    description: 'Cruce vial del tramo norte del mapa regional, importante para orientar recorridos entre Coronel Pringles, Indio Rico y los pasos del río.',
-    experience: 'Punto de orientación para armar circuito desde Indio Rico.',
+    image: '',
+    imageAlt: 'Imagen pendiente del Puente Ruta 85',
+    description: 'Cruce vial del tramo norte del mapa regional. Más que mirador, funciona como puerta logística para leer Indio Rico, Coronel Pringles y los primeros pasos del río.',
+    experience: 'Orientación de circuito, lectura de caminos rurales y conexión con la cuenca alta.',
     access: 'Ruta Provincial 85 y caminos de enlace; manejar con precaución.',
     mapUrl: 'https://maps.app.goo.gl/M7z3W9iTSw9LVhWf6',
     mapQuery: 'Puente Ruta 85 Río Quequén Salado Coronel Pringles Buenos Aires Argentina'
@@ -452,10 +482,10 @@ const historicalAttractions = [
     name: 'Puente Vanoli',
     slug: 'puente-vanoli',
     area: 'Corredor del río',
-    image: sharedImages.bridge,
-    imageAlt: 'Puente rural sobre el Quequén Salado',
-    description: 'Puente del circuito regional mencionado como referencia para pensar senderos, conservación y actividades turístico-recreativas sobre el río.',
-    experience: 'Cruce rural, lectura del cauce y conexión entre tramos del recorrido.',
+    image: sharedImages.puenteVanoli,
+    imageAlt: 'Puente Vanoli sobre el Quequén Salado',
+    description: 'Puente rural con potencial para senderos interpretativos y turismo de bajo impacto. Permite pensar cómo ordenar visitas sin dañar el corredor ribereño.',
+    experience: 'Cruce rural, lectura del cauce, conservación y futura interpretación ambiental.',
     access: 'Confirmar estado del camino y circulación permitida.',
     mapQuery: 'Puente Vanoli Río Quequén Salado Buenos Aires Argentina'
   },
@@ -465,10 +495,10 @@ const historicalAttractions = [
     name: 'Puente Cascallares',
     slug: 'puente-cascallares',
     area: 'Micaela Cascallares',
-    image: sharedImages.bridge,
-    imageAlt: 'Puente histórico en el corredor del río',
-    description: 'Referencia de cruce vinculada a Micaela Cascallares y a los caminos rurales que conectan el paisaje agropecuario con el Quequén Salado.',
-    experience: 'Paisaje rural, escala tranquila y conexión con el pueblo ferroviario.',
+    image: sharedImages.puenteCascallares,
+    imageAlt: 'Puente Cascallares sobre el Quequén Salado',
+    description: 'Cruce vinculado a Micaela Cascallares, donde el paisaje agropecuario, la memoria ferroviaria y los caminos rurales llegan hasta el Quequén Salado.',
+    experience: 'Paisaje rural, escala tranquila y conexión entre pueblo, puente y producción.',
     access: 'Tomar a Cascallares como base y consultar caminos locales.',
     mapUrl: 'https://maps.app.goo.gl/SuTeHfSTYuKqrcMQ8',
     mapQuery: 'Puente Cascallares Río Quequén Salado Micaela Cascallares Buenos Aires Argentina'
@@ -479,10 +509,10 @@ const historicalAttractions = [
     name: 'Molino de las Rosas',
     slug: 'molino-de-las-rosas',
     area: 'Paso histórico',
-    image: sharedImages.ruins,
-    imageAlt: 'Ruinas productivas junto al Quequén Salado',
-    description: 'Antiguo molino harinero ubicado cerca del paso natural donde se recuerda la pulpería “La Rosa del Sud”, una pieza de la memoria productiva del siglo XIX.',
-    experience: 'Historia productiva, paso natural y relato de frontera.',
+    image: sharedImages.molinoRosas,
+    imageAlt: 'Molino de las Rosas junto al Quequén Salado',
+    description: 'Antiguo molino harinero La Rosa del Sud, inaugurado en 1892. Sus ruinas permiten leer canal, represas, energía hidráulica, harina y ferrocarril en un mismo paisaje.',
+    experience: 'Memoria productiva, sistema hidráulico, ruinas, paso natural y relato de frontera.',
     access: 'Referencia patrimonial; visitar con información local actualizada.',
     mapQuery: 'Molino Las Rosas Río Quequén Salado Buenos Aires Argentina'
   },
@@ -492,10 +522,10 @@ const historicalAttractions = [
     name: 'Puente Ruta Nacional 3',
     slug: 'puente-ruta-nacional-3',
     area: 'RN3',
-    image: sharedImages.bridge,
-    imageAlt: 'Cruce del Río Quequén Salado',
-    description: 'Cruce principal de la Ruta Nacional 3 sobre el Quequén Salado. Es clave para acceder al corredor de Cascada Cifuentes y otros puntos cercanos.',
-    experience: 'Entrada práctica al circuito de cascadas y pueblos rurales.',
+    image: sharedImages.puenteRn3,
+    imageAlt: 'Puente de la Ruta Nacional 3 sobre el Quequén Salado',
+    description: 'Cruce principal de la RN3 sobre el Quequén Salado. Desde una ruta de alta circulación se ingresa al paisaje lento de cascadas, barrancas y caminos rurales.',
+    experience: 'Entrada práctica al circuito de cascadas, con foco en seguridad vial.',
     access: 'Ruta Nacional 3; extremar cuidado al detenerse o tomar caminos laterales.',
     mapUrl: 'https://maps.app.goo.gl/j5VsN25ERLr6eoSH8',
     mapQuery: 'Puente Ruta Nacional 3 Río Quequén Salado Buenos Aires Argentina'
@@ -506,10 +536,10 @@ const historicalAttractions = [
     name: 'Puente Nuevo',
     slug: 'puente-nuevo',
     area: 'Acceso a Oriente',
-    image: sharedImages.bridge,
-    imageAlt: 'Puente sobre el Río Quequén Salado',
-    description: 'Construido en 1962, se reconoce por su arco y por unir la Ruta Nacional 3 con el acceso pavimentado hacia Oriente.',
-    experience: 'Arquitectura vial, panorámica del río y acceso al tramo inferior.',
+    image: sharedImages.puenteNuevo,
+    imageAlt: 'Puente Nuevo sobre el Río Quequén Salado',
+    description: 'Construido en 1962, se reconoce por su arco y por unir la RN3 con Oriente. Sirve para comparar el cruce moderno con la memoria industrial de Puente Viejo.',
+    experience: 'Arquitectura vial, continuidad territorial y acceso al tramo inferior.',
     access: 'Acceso pavimentado entre RN3 y Oriente.',
     mapUrl: 'https://www.google.com.ar/maps/place/Puente+Nuevo/@-38.7182993,-60.5768097,819m/data=!3m2!1e3!4b1!4m5!3m4!1s0x958d81f921337397:0xc6d4be9d362e43b5!8m2!3d-38.7182993!4d-60.5751656',
     mapQuery: 'Puente Nuevo Oriente Río Quequén Salado Buenos Aires Argentina'
@@ -520,10 +550,10 @@ const historicalAttractions = [
     name: 'Puente Viejo',
     slug: 'puente-viejo',
     area: 'Oriente - Copetonas',
-    image: sharedImages.bridge,
-    imageAlt: 'Puente Viejo del Quequén Salado',
-    description: 'Paraje entre Oriente y Copetonas, con panorámicas del río, una represa, el puente ferroviario y restos de fábrica de cal y usina hidroeléctrica.',
-    experience: 'Uno de los puntos más completos: paisaje, ruinas, agua y fotografía.',
+    image: sharedImages.puenteViejoAereo,
+    imageAlt: 'Vista aérea de Puente Viejo sobre el Quequén Salado',
+    description: 'Paraje entre Oriente y Copetonas con represa, puente ferroviario, fábrica de cal y usina. Es una de las escenas patrimoniales más completas del río.',
+    experience: 'Paisaje, ruinas industriales, energía hidráulica, fotografía y memoria productiva.',
     access: 'Consultar condiciones; propicio para turismo aventura con prestadores.',
     mapUrl: 'https://www.google.com.ar/maps/place/Puente+Viejo/@-38.7350686,-60.5735274,819m/data=!3m2!1e3!4b1!4m5!3m4!1s0x958d820de823f3a1:0xaf1aebf6311a0111!8m2!3d-38.7350686!4d-60.5718829',
     mapQuery: 'Puente Viejo Oriente Copetonas Río Quequén Salado Buenos Aires Argentina'
@@ -534,10 +564,10 @@ const historicalAttractions = [
     name: 'Cueva del Tigre',
     slug: 'cueva-del-tigre',
     area: 'Camino a Marisol',
-    image: sharedImages.ruins,
-    imageAlt: 'Barrancas y cuevas del Quequén Salado',
-    description: 'Antiguo vado natural de carretas y viajeros. A pocos metros se observan cuevas y cascadas asociadas a la leyenda de Félix Pacheco, “El Tigre del Quequén”.',
-    experience: 'Relato oral, cuevas, barrancas y memoria del Tigre del Quequén.',
+    image: sharedImages.cascadaCuevaTigre,
+    imageAlt: 'Entorno de la Cueva del Tigre',
+    description: 'Antiguo vado natural de carretas y viajeros. Cuevas, cascadas y barrancas sostienen la leyenda de Félix Pacheco, “El Tigre del Quequén”.',
+    experience: 'Relato oral, vado histórico, cuevas, barrancas y memoria popular.',
     access: 'A unos 10 km de Oriente hacia Marisol, con desvío rural; confirmar permiso.',
     mapUrl: 'https://maps.app.goo.gl/9T5pQuv6KUUXWVoR7',
     mapQuery: 'Cueva del Tigre Río Quequén Salado Coronel Dorrego Buenos Aires Argentina'
@@ -548,10 +578,10 @@ const historicalAttractions = [
     name: 'Fortín Marco Paz',
     slug: 'fortin-marco-paz',
     area: 'Frontera histórica',
-    image: sharedImages.regionalMap,
-    imageAlt: 'Mapa de fortines de la comarca',
-    description: 'Punto de la antigua frontera señalado en el mapa regional. Ayuda a entender la ocupación territorial y la defensa de caminos rurales en el siglo XIX.',
-    experience: 'Interpretación histórica y lectura territorial.',
+    image: '',
+    imageAlt: 'Imagen pendiente del Fortín Marco Paz',
+    description: 'Punto de la antigua frontera señalado en el mapa regional. Ayuda a leer el avance rural, la vigilancia de caminos y la organización territorial del siglo XIX.',
+    experience: 'Interpretación histórica, frontera, caminos y lectura del paisaje.',
     access: 'Referencia de mapa; visitar con guía o información municipal.',
     mapUrl: 'https://maps.app.goo.gl/m7BfAsg6iFNUpK927',
     mapQuery: 'Fortín Marco Paz Río Quequén Salado Buenos Aires Argentina',
@@ -563,10 +593,10 @@ const historicalAttractions = [
     name: 'Fortín Buenos Aires',
     slug: 'fortin-buenos-aires',
     area: 'Frontera histórica',
-    image: sharedImages.regionalMap,
-    imageAlt: 'Mapa regional de atracciones históricas',
-    description: 'Referencia histórica del corredor del Quequén Salado, ligada a la red de vigilancia, caminos y ocupación rural del sudoeste bonaerense.',
-    experience: 'Contexto de frontera, caminos antiguos y memoria regional.',
+    image: '',
+    imageAlt: 'Imagen pendiente del Fortín Buenos Aires',
+    description: 'Referencia histórica del corredor, ligada a una red de vigilancia y a la transformación del sudoeste bonaerense en paisaje rural productivo.',
+    experience: 'Contexto de frontera, caminos antiguos, agua y memoria regional.',
     access: 'Referencia cartográfica; confirmar ubicación exacta antes de salir.',
     mapUrl: 'https://maps.app.goo.gl/cBk9GRkcDKRghEFC8',
     mapQuery: 'Fortín Buenos Aires Río Quequén Salado Buenos Aires Argentina',
@@ -578,10 +608,10 @@ const historicalAttractions = [
     name: 'Fortín Argentino',
     slug: 'fortin-argentino',
     area: 'Cascallares - Molino de las Rosas',
-    image: sharedImages.regionalMap,
-    imageAlt: 'Mapa regional con Fortín Argentino',
-    description: 'Hito de frontera indicado junto al sector de Cascallares y el Molino de las Rosas, dentro del circuito patrimonial de la comarca.',
-    experience: 'Complemento histórico para recorrer Cascallares y los pasos del río.',
+    image: '',
+    imageAlt: 'Imagen pendiente del Fortín Argentino',
+    description: 'Hito de frontera junto al sector de Cascallares y Molino de las Rosas. Permite unir fortines, producción, pasos del río y pueblos ferroviarios.',
+    experience: 'Frontera, Cascallares, molino, caminos rurales y mapa regional.',
     access: 'Referencia de mapa; requiere planificación local.',
     mapUrl: 'https://maps.app.goo.gl/gmww2LPJBeJhMkQJ9',
     mapQuery: 'Fortín Argentino Micaela Cascallares Río Quequén Salado Buenos Aires Argentina',

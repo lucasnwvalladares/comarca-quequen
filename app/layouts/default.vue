@@ -11,18 +11,19 @@
         </NuxtLink>
         
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
+        <nav class="hidden lg:flex space-x-6 text-sm uppercase tracking-widest font-semibold">
           <NuxtLink to="/" class="hover:text-stone-300 transition-colors">Inicio</NuxtLink>
           <NuxtLink to="/pueblos" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Pueblos</NuxtLink>
           <NuxtLink to="/atracciones" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Atracciones</NuxtLink>
+          <NuxtLink to="/actividades" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Actividades</NuxtLink>
           <NuxtLink to="/leyendas" class="hover:text-stone-300 transition-colors border-b-2 border-transparent hover:border-stone-400">Leyendas</NuxtLink>
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button 
-          class="md:hidden p-2 focus:outline-none z-50" 
+        <button
+          class="lg:hidden p-2 focus:outline-none z-50"
           @click="isMenuOpen = !isMenuOpen"
-          aria-label="Toggle Menu"
+          aria-label="Abrir menú"
         >
           <div class="w-6 h-5 relative flex flex-col justify-between">
             <span 
@@ -47,20 +48,20 @@
         leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-4"
       >
-        <nav 
-          v-if="isMenuOpen" 
-          class="absolute top-full left-0 w-full bg-stone-800 border-t border-stone-700 md:hidden flex flex-col p-6 space-y-6 shadow-2xl"
+        <nav
+          v-if="isMenuOpen"
+          class="absolute top-full left-0 w-full bg-stone-800 border-t border-stone-700 lg:hidden flex flex-col p-6 space-y-6 shadow-2xl"
         >
-          <NuxtLink 
-            to="/" 
-            class="text-xl font-serif italic border-b border-stone-700 pb-2" 
+          <NuxtLink
+            to="/"
+            class="text-xl font-serif italic border-b border-stone-700 pb-2"
             @click="isMenuOpen = false"
           >
             Inicio
           </NuxtLink>
-          <NuxtLink 
-            to="/pueblos" 
-            class="text-xl font-serif italic border-b border-stone-700 pb-2" 
+          <NuxtLink
+            to="/pueblos"
+            class="text-xl font-serif italic border-b border-stone-700 pb-2"
             @click="isMenuOpen = false"
           >
             Pueblos
@@ -72,9 +73,16 @@
           >
             Atracciones
           </NuxtLink>
-          <NuxtLink 
-            to="/leyendas" 
-            class="text-xl font-serif italic border-b border-stone-700 pb-2" 
+          <NuxtLink
+            to="/actividades"
+            class="text-xl font-serif italic border-b border-stone-700 pb-2"
+            @click="isMenuOpen = false"
+          >
+            Actividades
+          </NuxtLink>
+          <NuxtLink
+            to="/leyendas"
+            class="text-xl font-serif italic border-b border-stone-700 pb-2"
             @click="isMenuOpen = false"
           >
             Leyendas
@@ -107,7 +115,7 @@ const isMenuOpen = ref(false)
 // Close menu when resizing to desktop
 if (process.client) {
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1024) {
       isMenuOpen.value = false
     }
   })

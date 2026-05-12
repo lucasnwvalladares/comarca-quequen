@@ -237,7 +237,7 @@ const galleryItems = computed(() => {
   return []
 })
 
-const heroImage = computed(() => town.value?.image || galleryItems.value[0]?.src || '/images/rio-quequen.jpg')
+const heroImage = computed(() => town.value?.image || galleryItems.value[0]?.src || '')
 const heroAlt = computed(() => galleryItems.value.find((item) => item.src === heroImage.value)?.alt || town.value?.title || '')
 
 const mapLinks = computed(() => Object.entries(town.value?.maps || {}))

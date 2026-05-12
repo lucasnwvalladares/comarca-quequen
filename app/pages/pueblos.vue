@@ -20,12 +20,25 @@
         >
           <div class="relative h-64 overflow-hidden">
             <img
+              v-if="town.image"
               :src="town.image"
               :alt="town.title"
               class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div class="absolute inset-0 bg-stone-900/10 transition-colors group-hover:bg-transparent"></div>
+            <div v-else class="absolute inset-0 flex items-center justify-center bg-stone-100 text-center">
+              <div class="mx-6 rounded-lg border border-dashed border-stone-300 bg-white/80 px-5 py-4 text-stone-500">
+                <p class="text-[11px] font-bold uppercase tracking-widest">Imagen pendiente</p>
+                <p class="mt-2 text-xs leading-5">Falta sumar una foto específica de esta localidad.</p>
+              </div>
+            </div>
+            <div
+              :class="[
+                'absolute inset-0 transition-colors',
+                town.image ? 'bg-stone-900/10 group-hover:bg-transparent' : 'bg-stone-900/0'
+              ]"
+            ></div>
           </div>
+
           <div class="flex flex-grow flex-col p-8">
             <p class="mb-3 text-xs font-bold uppercase tracking-widest text-stone-400">{{ town.area }}</p>
             <h3 class="mb-3 font-serif text-3xl font-bold italic text-stone-800 transition-colors group-hover:text-stone-600">
@@ -39,19 +52,11 @@
           </div>
         </NuxtLink>
 
-        <div class="rounded-lg border-2 border-dashed border-stone-200 bg-stone-100 p-10 lg:col-span-2">
-          <h3 class="mb-4 font-serif text-2xl font-bold italic text-stone-500">Otras localidades de referencia</h3>
-          <div class="flex flex-wrap gap-3">
-            <span
-              v-for="town in otherTowns"
-              :key="town"
-              class="rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-bold text-stone-400"
-            >
-              {{ town }}
-            </span>
-          </div>
-          <p class="mt-6 text-sm italic text-stone-400">
-            La comarca también se lee a través de sus parajes, accesos rurales y pueblos vecinos.
+        <div class="rounded-lg border border-emerald-100 bg-emerald-50 p-8 lg:col-span-3">
+          <p class="text-xs font-bold uppercase tracking-[0.24em] text-emerald-800">Lectura comarcal</p>
+          <p class="mt-3 max-w-5xl text-sm leading-7 text-stone-700">
+            Estas guías funcionan como bases de recorrido: algunas localidades tienen servicios y vida urbana;
+            otras son pequeñas referencias rurales para entender caminos, estaciones, arroyos, parajes y accesos al Río Quequén Salado.
           </p>
         </div>
       </div>
@@ -76,19 +81,73 @@ const towns = [
     title: 'Indio Rico',
     slug: 'indio-rico',
     area: 'Partido de Coronel Pringles',
-    image: '/images/map-regional.png',
+    image: '',
     description: 'Pueblo turístico de tradición rural, estación ferroviaria, parroquia singular y vínculo directo con el río.'
   },
   {
     title: 'Balneario Marisol',
     slug: 'balneario-marisol',
     area: 'Partido de Coronel Dorrego',
-    image: '/images/rio-quequen.jpg',
+    image: '/images/marisol-1.png',
     description: 'Villa balnearia agreste donde el río, los médanos y el Atlántico forman un paisaje de ecoturismo.'
+  },
+  {
+    title: 'Oriente',
+    slug: 'oriente',
+    area: 'Partido de Coronel Dorrego',
+    image: '/images/oriente-1.png',
+    description: 'Pueblo rural y productivo cerca de Marisol, con vida institucional activa, feria local y acceso al tramo inferior del río.'
+  },
+  {
+    title: 'Copetonas',
+    slug: 'copetonas',
+    area: 'Partido de Tres Arroyos',
+    image: '',
+    description: 'Pueblo turístico rural con identidad ferroviaria, museo local, fiestas populares y cercanía al Quequén Salado.'
+  },
+  {
+    title: 'Reta',
+    slug: 'reta',
+    area: 'Partido de Tres Arroyos',
+    image: '/images/reta-1.png',
+    description: 'Balneario agreste con playa, albufera, túnel submedanal, barco hundido y una escala tranquila sobre la costa bonaerense.'
+  },
+  {
+    title: 'Gonzales Chaves',
+    slug: 'gonzales-chaves',
+    area: 'Partido de Adolfo Gonzales Chaves',
+    image: '',
+    description: 'Ciudad cabecera sobre la RN3, nacida alrededor del ferrocarril y útil como base de servicios para la cuenca alta.'
+  },
+  {
+    title: 'El Perdido',
+    slug: 'el-perdido',
+    area: 'Partido de Coronel Dorrego',
+    image: '',
+    description: 'Localidad ferroviaria y rural con propuestas de turismo de campo, museo, casonas antiguas y productos regionales.'
+  },
+  {
+    title: 'Aparicio',
+    slug: 'aparicio',
+    area: 'Partido de Coronel Dorrego',
+    image: '',
+    description: 'Pequeña localidad rural nacida junto a la estación, con cooperativa agrícola, instituciones y memoria ferroviaria.'
+  },
+  {
+    title: 'Irene',
+    slug: 'irene',
+    area: 'Partido de Coronel Dorrego',
+    image: '',
+    description: 'Paraje rural y ferroviario cercano a Cascada La Escondida, clave para leer el tramo de barrancas del Quequén Salado.'
+  },
+  {
+    title: 'De La Garma',
+    slug: 'de-la-garma',
+    area: 'Partido de Adolfo Gonzales Chaves',
+    image: '',
+    description: 'Localidad agrícola-ganadera sobre el antiguo ramal ferroviario, con estación histórica, parroquia, teatro y vida comunitaria.'
   }
 ]
-
-const otherTowns = ['Oriente', 'Copetonas', 'Reta', 'Gonzales Chaves', 'El Perdido', 'Aparicio', 'Irene', 'De La Garma']
 
 useHead({
   title: 'Pueblos - Comarca Río Quequén Salado',

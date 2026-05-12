@@ -11,8 +11,8 @@ difficulty: "Media por orientación y camino rural"
 bestSeason: "Todo el año con camino seco"
 baseTown: "Indio Rico / Micaela Cascallares"
 baseTownUrl: "/pueblos/indio-rico"
-image: "/images/map-regional.png"
-imageAlt: "Mapa de fortines de la comarca"
+image: ""
+imageAlt: "Imagen pendiente del Fortín Marco Paz"
 mapImage: "/images/map-regional.png"
 mapImageAlt: "Mapa regional con Fortín Marco Paz"
 mapUrl: "https://maps.app.goo.gl/m7BfAsg6iFNUpK927"
@@ -38,24 +38,16 @@ nearby:
     to: "/atracciones/puente-ruta-85"
   - label: "Indio Rico"
     to: "/pueblos/indio-rico"
-gallery:
-  - src: "/images/map-regional.png"
-    alt: "Mapa regional"
-    caption: "Fortín Marco Paz aparece como punto A del mapa regional."
-  - src: "/images/rio-quequen.jpg"
-    alt: "Paisaje rural"
-    caption: "La lectura de fortines depende del paisaje y de la memoria territorial."
-  - src: "/images/puente-viejo.jpg"
-    alt: "Puente histórico"
-    caption: "Los fortines se entienden mejor dentro de una red de caminos y cruces."
 sources:
+  - label: "Fronteras productivas decimonónicas en Tres Arroyos - SciELO"
+    url: "https://www.scielo.org.mx/scielo.php?pid=S2663-371X2023000100103&script=sci_arttext"
   - label: "Municipio de Coronel Pringles - Turismo rural"
     url: "https://coronelpringles.gov.ar/turismo/rural.html"
   - label: "Ley 15385 - Fundamentos sobre el Río Quequén Salado"
     url: "https://intranet.hcdiputados-ba.gov.ar/refleg/fw15385.pdf"
 ---
 
-Fortín Marco Paz aparece en el mapa regional como una referencia de frontera. Estos puntos permiten contar una dimensión histórica diferente de la comarca: no solo pueblos, puentes o cascadas, sino también ocupación territorial, vigilancia, caminos y conflictos del siglo XIX.
+Fortín Marco Paz aparece en el mapa regional como una referencia de frontera. Estos puntos permiten contar una dimensión histórica diferente de la comarca: no solo pueblos, puentes o cascadas, sino también ocupación territorial, vigilancia, caminos, disputas y transformaciones del siglo XIX.
 
 La visita puede ser más interpretativa que visual. En algunos sitios de fortines, las marcas materiales pueden ser escasas o difíciles de reconocer. Por eso es importante llegar con contexto.
 
@@ -63,9 +55,13 @@ La visita puede ser más interpretativa que visual. En algunos sitios de fortine
 
 Los fortines eran pequeñas posiciones vinculadas a líneas de frontera, control de caminos y defensa territorial. En el sudoeste bonaerense, ayudan a explicar cómo se fue organizando el avance rural y estatal sobre territorios de circulación indígena y criolla.
 
+La investigación histórica sobre el sur bonaerense muestra que, desde mediados del siglo XIX, estos emplazamientos favorecieron la instalación de estancias, puestos y casas de negocio en puntos estratégicos, muchas veces cerca de agua y de caminos incipientes. Por eso un fortín no debe leerse solo como un puesto militar: también habla del inicio de redes productivas y comerciales.
+
 ## Cómo leerlo hoy
 
 El visitante debería mirar el paisaje: distancias, alturas relativas, cursos de agua, caminos y posibilidades de observación. Aun cuando no haya una construcción visible, el punto puede ayudar a entender por qué ese lugar importaba.
+
+Marco Paz puede funcionar como primera escala para explicar la red de fortines del mapa. La letra A no es un simple marcador: ordena el relato y permite conectar este punto con Buenos Aires y Argentino, más al sur del circuito.
 
 ## Visita responsable
 

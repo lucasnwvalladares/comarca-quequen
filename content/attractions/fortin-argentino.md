@@ -11,8 +11,8 @@ difficulty: "Media por orientación y caminos rurales"
 bestSeason: "Todo el año con camino seco"
 baseTown: "Micaela Cascallares"
 baseTownUrl: "/pueblos/micaela-cascallares"
-image: "/images/map-regional.png"
-imageAlt: "Mapa regional con Fortín Argentino"
+image: ""
+imageAlt: "Imagen pendiente del Fortín Argentino"
 mapImage: "/images/map-regional.png"
 mapImageAlt: "Mapa regional con Fortín Argentino"
 mapUrl: "https://maps.app.goo.gl/gmww2LPJBeJhMkQJ9"
@@ -38,17 +38,9 @@ nearby:
     to: "/atracciones/puente-cascallares"
   - label: "Micaela Cascallares"
     to: "/pueblos/micaela-cascallares"
-gallery:
-  - src: "/images/map-regional.png"
-    alt: "Mapa regional"
-    caption: "Fortín Argentino aparece como punto C del mapa regional."
-  - src: "/images/cascallares-portal.png"
-    alt: "Micaela Cascallares"
-    caption: "Cascallares funciona como base para este sector patrimonial."
-  - src: "/images/ruinas-usina.jpg"
-    alt: "Ruinas productivas"
-    caption: "El punto se entiende mejor junto al patrimonio productivo y de frontera."
 sources:
+  - label: "Fronteras productivas decimonónicas en Tres Arroyos - SciELO"
+    url: "https://www.scielo.org.mx/scielo.php?pid=S2663-371X2023000100103&script=sci_arttext"
   - label: "Turismo Tres Arroyos - Cascallares"
     url: "https://turismo.tresarroyos.gov.ar/category/rural/cascallares/"
   - label: "Ley 15385 - Fundamentos sobre el Río Quequén Salado"
@@ -63,9 +55,13 @@ Como atractivo, funciona mejor desde la interpretación que desde la espectacula
 
 Micaela Cascallares aporta una base clara para entender este sector: origen agrícola, estación ferroviaria, caminos rurales y cercanía con el Quequén Salado. Fortín Argentino suma la capa previa de frontera y organización territorial.
 
+La región de Tres Arroyos y su entorno se transformó durante la segunda mitad del siglo XIX, cuando la frontera, la ganadería, los caminos y luego el ferrocarril reorganizaron el poblamiento. En ese proceso, los fortines ayudan a leer la etapa anterior a los pueblos consolidados.
+
 ## Cómo contarlo
 
 La página debe explicar que los fortines fueron parte de una red. En el mapa, las letras A, B y C permiten identificarlos como un subconjunto dentro de las atracciones históricas. Esa diferenciación ayuda a que el visitante no los confunda con puentes o ruinas productivas.
+
+En Fortín Argentino, el relato puede unirse con Molino de las Rosas y Puente Cascallares: primero la frontera y los pasos, luego la producción y finalmente los pueblos ferroviarios. Esa secuencia convierte un punto aparentemente discreto en una pieza importante del circuito.
 
 ## Próximos datos a completar
 

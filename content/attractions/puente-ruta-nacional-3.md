@@ -11,8 +11,8 @@ difficulty: "Baja como referencia; alta precaución vial"
 bestSeason: "Todo el año"
 baseTown: "Micaela Cascallares"
 baseTownUrl: "/pueblos/micaela-cascallares"
-image: "/images/puente-viejo.jpg"
-imageAlt: "Cruce del Río Quequén Salado"
+image: "/images/puente-rn3.jpeg"
+imageAlt: "Puente de la Ruta Nacional 3 sobre el Río Quequén Salado"
 mapImage: "/images/map-regional.png"
 mapImageAlt: "Mapa regional con Puente Ruta Nacional 3"
 mapUrl: "https://maps.app.goo.gl/j5VsN25ERLr6eoSH8"
@@ -39,15 +39,12 @@ nearby:
   - label: "Micaela Cascallares"
     to: "/pueblos/micaela-cascallares"
 gallery:
-  - src: "/images/puente-viejo.jpg"
-    alt: "Puente sobre el río"
-    caption: "Imagen provisoria del sistema de cruces del Quequén Salado."
+  - src: "/images/puente-rn3.jpeg"
+    alt: "Puente de la Ruta Nacional 3 sobre el Quequén Salado"
+    caption: "El cruce de la RN3 funciona como referencia de acceso al corredor de cascadas."
   - src: "/images/map-regional.png"
     alt: "Mapa regional"
-    caption: "El cruce de la RN3 aparece como punto 5 del mapa regional."
-  - src: "/images/cascada-cifuentes.jpg"
-    alt: "Cascada Cifuentes"
-    caption: "El puente funciona como referencia práctica para el corredor de Cifuentes."
+    caption: "El mapa regional lo señala como punto 5, una puerta vial hacia Cifuentes y Cascallares."
 sources:
   - label: "Municipalidad de Coronel Dorrego - Parajes turísticos del río"
     url: "https://dorrego.gob.ar/mun/direcciones/turismo/menu/el-rio/parajes-turisticos.php"
@@ -56,6 +53,10 @@ sources:
 El Puente Ruta Nacional 3 es una referencia práctica fundamental. La RN3 atraviesa buena parte del sudoeste bonaerense y, al cruzar el Quequén Salado, acerca al visitante al corredor de Cascada Cifuentes y otros puntos naturales.
 
 No es necesariamente un atractivo para permanecer: es un nodo. En turismo, los nodos importan porque ordenan cómo se llega, qué se puede combinar y dónde empieza la experiencia rural.
+
+## Una puerta al corredor de cascadas
+
+La información turística municipal ubica el acceso a Cascada Cifuentes sobre la Ruta Nacional 3, en el kilómetro 532, con camino rural y descenso caminando. Por eso este cruce funciona como una referencia mental para muchos visitantes: desde una ruta de tránsito intenso se ingresa a un paisaje completamente distinto, más lento, rural y encajonado.
 
 ## Seguridad ante todo
 

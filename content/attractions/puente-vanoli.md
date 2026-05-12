@@ -11,8 +11,8 @@ difficulty: "Media por camino rural y falta de servicios"
 bestSeason: "Otoño y primavera"
 baseTown: "Indio Rico"
 baseTownUrl: "/pueblos/indio-rico"
-image: "/images/puente-viejo.jpg"
-imageAlt: "Puente rural sobre el Quequén Salado"
+image: "/images/puente-vanoli.jpeg"
+imageAlt: "Puente Vanoli sobre el Quequén Salado"
 mapImage: "/images/map-regional.png"
 mapImageAlt: "Mapa regional con Puente Vanoli"
 mapQuery: "Puente Vanoli Río Quequén Salado Buenos Aires Argentina"
@@ -38,15 +38,15 @@ nearby:
   - label: "Desembocadura A. Pillahuinco"
     to: "/atracciones/desembocadura-pillahuinco"
 gallery:
-  - src: "/images/puente-viejo.jpg"
-    alt: "Puente sobre el río"
-    caption: "Imagen provisoria del sistema de puentes de la comarca."
+  - src: "/images/puente-vanoli.jpeg"
+    alt: "Puente Vanoli sobre el río"
+    caption: "Puente Vanoli muestra el río en escala rural: cruce, camino y paisaje productivo en continuidad."
+  - src: "/images/puente-vanoli-2.jpeg"
+    alt: "Vista del Puente Vanoli"
+    caption: "El entorno del puente ayuda a imaginar futuros senderos de bajo impacto y visitas interpretativas."
   - src: "/images/map-regional.png"
     alt: "Mapa regional"
-    caption: "Puente Vanoli aparece como punto 2 del mapa regional."
-  - src: "/images/rio-quequen.jpg"
-    alt: "Río Quequén Salado"
-    caption: "El punto tiene potencial para senderismo de bajo impacto."
+    caption: "El mapa regional lo ubica como punto 2, dentro del tramo norte vinculado a Indio Rico."
 sources:
   - label: "El Orden de Pringles - Sendero cercano al Puente Vanoli"
     url: "https://www.elorden.com/noticias/2023/11/19/19098-cuenca-del-quequen-salado-se-podria-hacer-un-sendero-cercano-al-puente-vanoli"
@@ -61,6 +61,8 @@ Eso lo vuelve distinto de otros atractivos más consolidados. No es solo “un p
 ## Puente, sendero y conservación
 
 Un sendero bien diseñado podría ordenar el acceso, evitar pisoteo innecesario, ofrecer interpretación ambiental y sumar una experiencia cerca de Indio Rico. Pero para que eso funcione, hacen falta acuerdos, señalización, mantenimiento y reglas claras.
+
+En este tramo, el valor no está en prometer una visita masiva inmediata, sino en mostrar una dirección posible: turismo lento, caminatas autorizadas, lectura del cauce y educación ambiental. La comarca necesita puntos así para crecer con criterio.
 
 ## Qué mirar
 

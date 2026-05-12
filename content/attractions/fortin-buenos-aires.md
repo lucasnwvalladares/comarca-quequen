@@ -11,8 +11,8 @@ difficulty: "Media por orientación"
 bestSeason: "Todo el año con camino seco"
 baseTown: "Indio Rico / Micaela Cascallares"
 baseTownUrl: "/pueblos/indio-rico"
-image: "/images/map-regional.png"
-imageAlt: "Mapa regional de atracciones históricas"
+image: ""
+imageAlt: "Imagen pendiente del Fortín Buenos Aires"
 mapImage: "/images/map-regional.png"
 mapImageAlt: "Mapa regional con Fortín Buenos Aires"
 mapUrl: "https://maps.app.goo.gl/cBk9GRkcDKRghEFC8"
@@ -38,17 +38,9 @@ nearby:
     to: "/atracciones/fortin-argentino"
   - label: "Puente Cascallares"
     to: "/atracciones/puente-cascallares"
-gallery:
-  - src: "/images/map-regional.png"
-    alt: "Mapa regional"
-    caption: "Fortín Buenos Aires aparece como punto B del mapa regional."
-  - src: "/images/rio-quequen.jpg"
-    alt: "Paisaje del río"
-    caption: "El agua y los caminos fueron claves para entender la frontera."
-  - src: "/images/ruinas-usina.jpg"
-    alt: "Patrimonio histórico"
-    caption: "El circuito histórico reúne marcas visibles y referencias cartográficas."
 sources:
+  - label: "Fronteras productivas decimonónicas en Tres Arroyos - SciELO"
+    url: "https://www.scielo.org.mx/scielo.php?pid=S2663-371X2023000100103&script=sci_arttext"
   - label: "Ley 15385 - Fundamentos sobre el Río Quequén Salado"
     url: "https://intranet.hcdiputados-ba.gov.ar/refleg/fw15385.pdf"
 ---
@@ -61,9 +53,13 @@ Como sucede con otros fortines, puede no ofrecer una imagen monumental. La exper
 
 Los fortines deben contarse como sistema. Marco Paz, Buenos Aires y Argentino funcionan mejor juntos que por separado. Esa red permite hablar de líneas de vigilancia, caminos, distancias y relación con cursos de agua.
 
+En el sur bonaerense, los fortines no estuvieron aislados de la economía rural. La expansión de estancias, puestos, comercios y futuros pueblos se vinculó con la seguridad relativa que ofrecían estas líneas de frontera. Por eso Fortín Buenos Aires puede ayudar a explicar una transición: de territorio de circulación amplia y conflictiva a paisaje rural organizado por propiedad, caminos y producción.
+
 ## Qué puede sumar al visitante
 
 Para un público interesado en historia regional, el punto agrega profundidad. No todo el turismo debe ser contemplativo; también puede ser interpretativo. Mirar el paisaje con una pregunta histórica cambia la experiencia.
+
+Una buena lectura puede partir de preguntas simples: ¿por qué ubicar un punto de vigilancia aquí?, ¿qué camino se quería controlar?, ¿qué relación tenía con el agua?, ¿qué pueblos y estancias crecieron después? Con esas preguntas, el sitio gana sentido aunque no conserve una estructura evidente.
 
 ## Cuidado del sitio
 

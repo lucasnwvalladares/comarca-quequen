@@ -81,7 +81,7 @@
                   </h2>
                 </div>
                 <p class="max-w-xl text-sm leading-6 text-stone-500">
-                  Por ahora usamos imágenes de referencia del proyecto; después podemos reemplazarlas por fotos específicas de cada punto.
+                  Cada imagen suma una pista de lectura: escala del paisaje, acceso, memoria del lugar o relación con el mapa del recorrido.
                 </p>
               </div>
 
@@ -90,18 +90,32 @@
                   v-for="(item, index) in galleryItems"
                   :key="`${item.src}-${index}`"
                   type="button"
+                  :disabled="item.placeholder"
                   :class="[
                     'group relative min-h-72 overflow-hidden rounded-lg border border-stone-200 bg-stone-200 text-left shadow-sm',
+                    item.placeholder ? 'cursor-default' : '',
                     index === 0 ? 'md:col-span-2 md:row-span-2' : ''
                   ]"
-                  @click="openLightbox(item)"
+                  @click="item.src && openLightbox(item, index)"
                 >
                   <img
+                    v-if="item.src"
                     :src="resolveAssetPath(item.src)"
                     :alt="item.alt || item.caption || attraction.title"
                     class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/10 to-transparent"></div>
+                  <div v-else class="absolute inset-0 flex items-center justify-center bg-stone-100 text-center">
+                    <div class="mx-6 rounded-lg border border-dashed border-stone-300 bg-white/80 px-6 py-5 text-stone-500">
+                      <p class="text-xs font-bold uppercase tracking-widest">Imagen pendiente</p>
+                      <p class="mt-2 text-sm leading-6">Falta sumar una foto específica de este punto.</p>
+                    </div>
+                  </div>
+                  <div
+                    :class="[
+                      'absolute inset-0 bg-gradient-to-t to-transparent',
+                      item.src ? 'from-stone-950/80 via-stone-950/10' : 'from-stone-950/10 via-transparent'
+                    ]"
+                  ></div>
                   <div class="absolute inset-x-0 bottom-0 p-5 text-white">
                     <p v-if="item.caption" class="text-sm font-semibold leading-5 drop-shadow">
                       {{ item.caption }}
@@ -237,7 +251,12 @@
         :src="lightboxImage.src"
         :alt="lightboxImage.alt"
         :is-open="isLightboxOpen"
-        @close="isLightboxOpen = false"
+        :show-previous="canNavigateLightbox"
+        :show-next="canNavigateLightbox"
+        :counter-label="lightboxCounterLabel"
+        @previous="showPreviousLightboxImage"
+        @next="showNextLightboxImage"
+        @close="closeLightbox"
       />
     </article>
 
@@ -290,7 +309,8 @@ const quickFacts = computed(() => {
 
 const galleryItems = computed(() => {
   const gallery = attraction.value?.gallery || []
-  if (gallery.length) return gallery
+  const validGallery = gallery.filter((item) => item?.src)
+  if (validGallery.length) return validGallery
 
   if (attraction.value?.image) {
     return [
@@ -302,10 +322,17 @@ const galleryItems = computed(() => {
     ]
   }
 
-  return []
+  return [
+    {
+      placeholder: true,
+      alt: 'Imagen pendiente',
+      caption: 'Imagen pendiente: falta sumar una foto específica de este punto.'
+    }
+  ]
 })
 
-const heroImage = computed(() => attraction.value?.image || galleryItems.value[0]?.src || '/images/rio-quequen.jpg')
+const firstGalleryImage = computed(() => galleryItems.value.find((item) => item.src)?.src || '')
+const heroImage = computed(() => attraction.value?.image || firstGalleryImage.value || '')
 const heroAlt = computed(() => galleryItems.value.find((item) => item.src === heroImage.value)?.alt || attraction.value?.title || '')
 
 const mapHref = computed(() => {
@@ -319,15 +346,69 @@ const mapHref = computed(() => {
 const defaultConservation = 'Confirmá accesos antes de salir, respetá tranqueras y caminos rurales, evitá dejar residuos y no ingreses a campos privados sin autorización.'
 
 const isLightboxOpen = ref(false)
-const lightboxImage = ref({ src: '', alt: '' })
+const lightboxItems = ref([])
+const lightboxIndex = ref(0)
 
-const openLightbox = (item) => {
-  lightboxImage.value = {
-    src: item.src,
-    alt: item.alt || item.caption || attraction.value?.title || ''
+const lightboxImage = computed(() => lightboxItems.value[lightboxIndex.value] || { src: '', alt: '' })
+const canNavigateLightbox = computed(() => lightboxItems.value.length > 1)
+const lightboxCounterLabel = computed(() => {
+  if (!canNavigateLightbox.value) return ''
+  return `${lightboxIndex.value + 1} / ${lightboxItems.value.length}`
+})
+
+const normalizeLightboxItem = (item) => ({
+  src: item.src,
+  alt: item.alt || item.caption || attraction.value?.title || ''
+})
+
+const openLightbox = (item, index = -1) => {
+  if (index >= 0) {
+    const items = galleryItems.value.filter((galleryItem) => galleryItem?.src).map(normalizeLightboxItem)
+    const selectedIndex = items.findIndex((galleryItem) => galleryItem.src === item.src)
+    lightboxItems.value = items
+    lightboxIndex.value = selectedIndex >= 0 ? selectedIndex : 0
+  } else {
+    lightboxItems.value = [
+      {
+        src: item.src,
+        alt: item.alt || item.caption || attraction.value?.title || ''
+      }
+    ]
+    lightboxIndex.value = 0
   }
+
   isLightboxOpen.value = true
 }
+
+const showPreviousLightboxImage = () => {
+  if (!canNavigateLightbox.value) return
+  lightboxIndex.value = (lightboxIndex.value - 1 + lightboxItems.value.length) % lightboxItems.value.length
+}
+
+const showNextLightboxImage = () => {
+  if (!canNavigateLightbox.value) return
+  lightboxIndex.value = (lightboxIndex.value + 1) % lightboxItems.value.length
+}
+
+const closeLightbox = () => {
+  isLightboxOpen.value = false
+}
+
+watch(galleryItems, () => {
+  if (!isLightboxOpen.value) return
+
+  const currentImage = lightboxImage.value
+  const items = galleryItems.value.filter((galleryItem) => galleryItem?.src).map(normalizeLightboxItem)
+
+  if (!items.length || !currentImage.src) {
+    closeLightbox()
+    return
+  }
+
+  lightboxItems.value = items
+  const nextIndex = items.findIndex((item) => item.src === currentImage.src)
+  lightboxIndex.value = nextIndex >= 0 ? nextIndex : 0
+})
 
 const resolveAssetPath = (src) => {
   if (!src || src.startsWith('http') || src.startsWith('data:')) return src

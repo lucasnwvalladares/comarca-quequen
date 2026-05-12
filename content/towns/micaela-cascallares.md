@@ -13,15 +13,20 @@ gallery:
   - src: "/images/rio-quequen.jpg"
     alt: "Paisaje del Río Quequén Salado"
     caption: "El Quequén Salado aparece cerca del pueblo como horizonte natural de la comarca."
+  - src: "/images/balneario-cascallares-area-de-asado.jpeg"
+    alt: "Área de asado en el Balneario de Cascallares"
+    caption: "El balneario suma una escala familiar para descanso, picnic y contacto tranquilo con el río."
 founded: "23 de julio de 1889"
-population: "400 hab. (2022)"
+population: "690 hab. (relevamiento local 2025)"
 distance: "22 km de Tres Arroyos"
 access: "RN3"
 attractions:
   - "Estación ferroviaria y antiguo trazado del Ferrocarril del Sud"
   - "Acceso rural por avenida Eduardo Perfumo"
   - "Biblioteca Luz y Cultura"
-  - "Balneario y costa del Río Quequén Salado"
+  - "Cooperativa agrícola, plantas de cereales y actividad cerealera local"
+  - "Instituciones educativas: jardín de infantes, escuela primaria y secundaria agraria"
+  - "Balneario de Cascallares, costa del río y área propicia para picnic o asado"
   - "Cocina rural y servicios comunitarios"
 maps:
   Pueblo: "https://www.google.com/maps/search/?api=1&query=Micaela%20Cascallares%2C%20Tres%20Arroyos%2C%20Buenos%20Aires%2C%20Argentina"
@@ -47,6 +52,20 @@ El pueblo conserva una escala serena: calles bajas, construcciones sencillas, in
 
 La Biblioteca Luz y Cultura, la delegación municipal y los servicios comunitarios son puntos de referencia para orientarse. En la oferta turística del distrito también aparece la cocina rural, una buena forma de acercarse a sabores caseros y a la hospitalidad local.
 
+## Vida comunitaria actual
+
+Un relevamiento local reciente registró 384 viviendas y alrededor de 690 habitantes. Ese dato ayuda a contar mejor la escala real de Cascallares: no es solo un punto de paso sobre la RN3, sino un pueblo con vida diaria, instituciones, trabajo rural y redes comunitarias activas.
+
+La localidad cuenta con jardín de infantes, escuela primaria, escuela secundaria agraria, club y comercios de abastecimiento. También sostiene una delegación con delegado, personal administrativo y empleados de calle, una estructura importante para la vida cotidiana y el mantenimiento del pueblo.
+
+## Producción y servicios
+
+La actividad local está fuertemente vinculada a la cooperativa agrícola. En torno a ella se organiza buena parte del movimiento productivo: plantas de cereales, depósito de agroquímicos, transporte de cereal y servicios asociados al trabajo rural.
+
+El relevamiento menciona además gomería, talleres de soldadura y trabajos generales, remises y una flota significativa de camiones dedicados al acarreo de cereal y hacienda. Para el visitante, estos datos explican por qué Cascallares conserva una identidad tan ligada al campo, al ferrocarril, a la ruta y a la logística agrícola.
+
 ## Naturaleza cercana
 
 Desde Cascallares se puede continuar hacia parajes del Río Quequén Salado, puentes rurales y sectores de barrancas. La recomendación para cualquier salida de ecoturismo es consultar el estado de los caminos, respetar tranqueras y circular con guías o prestadores habilitados cuando el acceso atraviese campos privados.
+
+El Balneario de Cascallares merece aparecer como punto de descanso dentro del mapa de actividades: es una escala más tranquila para picnic, asado y contacto familiar con la costa del río, distinta de los sectores de cascadas o barrancas que requieren mayor cuidado.
