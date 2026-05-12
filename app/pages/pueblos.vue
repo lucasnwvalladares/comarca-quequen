@@ -21,7 +21,7 @@
           <div class="relative h-64 overflow-hidden">
             <img
               v-if="town.image"
-              :src="town.image"
+              :src="resolveAssetPath(town.image)"
               :alt="town.title"
               class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
@@ -66,8 +66,20 @@
 
 <script setup>
 const route = useRoute()
+const config = useRuntimeConfig()
 
 const hasTownSlug = computed(() => Boolean(route.params.slug))
+
+const resolveAssetPath = (src) => {
+  if (!src || src.startsWith('http') || src.startsWith('data:')) return src
+
+  const base = config.app.baseURL.replace(/\/$/, '')
+  if (src.startsWith('/') && !src.startsWith(base)) {
+    return `${base}${src}`
+  }
+
+  return src
+}
 
 const towns = [
   {
